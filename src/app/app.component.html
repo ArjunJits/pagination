@@ -1,0 +1,16 @@
+<div class="container">
+<table class="table table-striped" style="border: 1px solid black">
+  <thead>
+    <th>User Name</th>
+    <th> City</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of obj | paginate: {itemsPerPage:3,currentPage:pno}">
+    <td>{{data.uname}}</td>
+    <td>{{data.city}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pagination-controls (pageChange)="pno=$event"></pagination-controls>
+
